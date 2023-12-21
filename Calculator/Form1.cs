@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace Calculator
 {
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
-        public Form1()
+        public Calculator()
         {
             InitializeComponent();
+        }
+        private void btn7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
