@@ -44,7 +44,7 @@
             this.btnDivide = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSolution = new System.Windows.Forms.Button();
-            this.lblOutput = new System.Windows.Forms.Label();
+            this.tbOutput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn0
@@ -65,6 +65,7 @@
             this.btn2.TabIndex = 1;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
@@ -74,6 +75,7 @@
             this.btn3.TabIndex = 2;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn1
             // 
@@ -83,6 +85,7 @@
             this.btn1.TabIndex = 3;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // btn4
             // 
@@ -92,6 +95,7 @@
             this.btn4.TabIndex = 4;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // btn5
             // 
@@ -101,6 +105,7 @@
             this.btn5.TabIndex = 5;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // btn6
             // 
@@ -110,6 +115,7 @@
             this.btn6.TabIndex = 6;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
             // btn8
             // 
@@ -139,6 +145,7 @@
             this.btn9.TabIndex = 9;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // btnMultiply
             // 
@@ -148,6 +155,7 @@
             this.btnMultiply.TabIndex = 10;
             this.btnMultiply.Text = "x";
             this.btnMultiply.UseVisualStyleBackColor = true;
+            this.btnMultiply.Click += new System.EventHandler(this.btnMultiply_Click);
             // 
             // btnMinus
             // 
@@ -157,6 +165,7 @@
             this.btnMinus.TabIndex = 11;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // btnPlus
             // 
@@ -166,6 +175,7 @@
             this.btnPlus.TabIndex = 12;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // btnDivide
             // 
@@ -175,15 +185,17 @@
             this.btnDivide.TabIndex = 13;
             this.btnDivide.Text = "÷";
             this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(232, 111);
+            this.btnDelete.Location = new System.Drawing.Point(230, 111);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(68, 45);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "<-";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSolution
             // 
@@ -193,22 +205,24 @@
             this.btnSolution.TabIndex = 15;
             this.btnSolution.Text = "=";
             this.btnSolution.UseVisualStyleBackColor = true;
+            this.btnSolution.Click += new System.EventHandler(this.btnSolution_Click);
             // 
-            // lblOutput
+            // tbOutput
             // 
-            this.lblOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutput.Location = new System.Drawing.Point(248, 32);
-            this.lblOutput.Name = "lblOutput";
-            this.lblOutput.Size = new System.Drawing.Size(50, 50);
-            this.lblOutput.TabIndex = 16;
-            this.lblOutput.Text = "0";
+            this.tbOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOutput.Location = new System.Drawing.Point(12, 29);
+            this.tbOutput.Name = "tbOutput";
+            this.tbOutput.Size = new System.Drawing.Size(288, 53);
+            this.tbOutput.TabIndex = 16;
+            this.tbOutput.Text = "0";
+            this.tbOutput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 320);
-            this.Controls.Add(this.lblOutput);
+            this.Controls.Add(this.tbOutput);
             this.Controls.Add(this.btnSolution);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnDivide);
@@ -228,6 +242,7 @@
             this.Name = "Calculator";
             this.Text = "Calculator";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -249,7 +264,7 @@
         private System.Windows.Forms.Button btnDivide;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSolution;
-        private System.Windows.Forms.Label lblOutput;
+        private System.Windows.Forms.TextBox tbOutput;
     }
 }
 
