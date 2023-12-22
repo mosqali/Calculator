@@ -100,9 +100,25 @@ namespace Calculator
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            tbOutput.Text = "0";
+            //tbOutput.Text = "0";
 
+            //Remove the last character
+            string deletedCharOfNumb = RemoveLastCharacter(tbOutput.Text);
 
+            tbOutput.Text = deletedCharOfNumb;
+
+            string RemoveLastCharacter(string number)
+            {
+                //Check if the string is not empty
+                if (!string.IsNullOrEmpty(number))
+                {
+                    //Use Substring to create a new string excluding the last character
+                    return number.Substring(0, number.Length - 1);
+                }
+
+                //Return an empty string if the input is empty
+                return string.Empty;
+            }
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
@@ -110,6 +126,8 @@ namespace Calculator
             option = "-";
 
             numb1 = int.Parse(tbOutput.Text);
+
+            tbOutput.Text = "0";
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
@@ -117,6 +135,8 @@ namespace Calculator
             option = "+";
 
             numb1 = int.Parse(tbOutput.Text);
+
+            tbOutput.Text = "0";
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
@@ -124,6 +144,8 @@ namespace Calculator
             option = "*";
 
             numb1 = int.Parse(tbOutput.Text);
+
+            tbOutput.Text = "0";
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
@@ -131,6 +153,8 @@ namespace Calculator
             option = "/";
 
             numb1 = int.Parse(tbOutput.Text);
+
+            tbOutput.Text = "0";
         }
 
         private void btnSolution_Click(object sender, EventArgs e)
