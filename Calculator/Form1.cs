@@ -17,11 +17,10 @@ namespace Calculator
             InitializeComponent();
         }
 
-        int result;
-        int numb1;
-        int numb2;
+        double result;
+        double numb1;
+        double numb2;
         string option;
-        bool reset;
 
         private void setOutputToZero()
         {
@@ -98,6 +97,23 @@ namespace Calculator
             tbOutput.Text += "9";
         }
 
+        private void btnComma_Click(object sender, EventArgs e)
+        {
+            char Comma = ',';
+
+            bool ContainsComma = CheckForComma(tbOutput.Text, Comma);
+
+            if (!ContainsComma)
+            {
+                tbOutput.Text += ",";
+            }
+
+            bool CheckForComma(string number, char character)
+            {
+                return number.Contains(character);
+            }
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //tbOutput.Text = "0";
@@ -125,7 +141,7 @@ namespace Calculator
         {
             option = "-";
 
-            numb1 = int.Parse(tbOutput.Text);
+            numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
         }
@@ -134,7 +150,7 @@ namespace Calculator
         {
             option = "+";
 
-            numb1 = int.Parse(tbOutput.Text);
+            numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
         }
@@ -143,7 +159,7 @@ namespace Calculator
         {
             option = "*";
 
-            numb1 = int.Parse(tbOutput.Text);
+            numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
         }
@@ -152,14 +168,14 @@ namespace Calculator
         {
             option = "/";
 
-            numb1 = int.Parse(tbOutput.Text);
+            numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
         }
 
         private void btnSolution_Click(object sender, EventArgs e)
         {
-            numb2 = int.Parse(tbOutput.Text);
+            numb2 = double.Parse(tbOutput.Text);
 
             if (option == "-")
             {
@@ -179,8 +195,6 @@ namespace Calculator
             }
 
             tbOutput.Text = result.ToString();
-
-            reset = true;
         }
     }
 }
