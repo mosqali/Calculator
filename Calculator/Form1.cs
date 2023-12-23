@@ -101,6 +101,7 @@ namespace Calculator
         {
             char Comma = ',';
 
+            //Creates a boolean which is true or false depents on the function
             bool ContainsComma = CheckForComma(tbOutput.Text, Comma);
 
             if (!ContainsComma)
@@ -108,6 +109,7 @@ namespace Calculator
                 tbOutput.Text += ",";
             }
 
+            //a function which returns a boolean
             bool CheckForComma(string number, char character)
             {
                 return number.Contains(character);
