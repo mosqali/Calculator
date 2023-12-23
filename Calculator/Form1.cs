@@ -118,12 +118,17 @@ namespace Calculator
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //tbOutput.Text = "0";
-
             //Remove the last character
             string deletedCharOfNumb = RemoveLastCharacter(tbOutput.Text);
 
-            tbOutput.Text = deletedCharOfNumb;
+            if(tbOutput.Text.Length == 1)
+            {
+                tbOutput.Text = "0";
+            }
+            else
+            {
+                tbOutput.Text = deletedCharOfNumb;
+            }
 
             string RemoveLastCharacter(string number)
             {
