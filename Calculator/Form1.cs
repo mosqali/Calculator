@@ -21,6 +21,7 @@ namespace Calculator
         double numb1;
         double numb2;
         string option;
+        bool calculate = false;
 
         private void setOutputToZero()
         {
@@ -29,7 +30,6 @@ namespace Calculator
                 tbOutput.Text = "";
             }
         }
-
         private void btn0_Click(object sender, EventArgs e)
         {
             setOutputToZero();
@@ -42,21 +42,18 @@ namespace Calculator
 
             tbOutput.Text += "1";
         }
-
         private void btn2_Click(object sender, EventArgs e)
         {
             setOutputToZero();
 
             tbOutput.Text += "2";
         }
-
         private void btn3_Click(object sender, EventArgs e)
         {
             setOutputToZero();
 
             tbOutput.Text += "3";
         }
-
         private void btn4_Click(object sender, EventArgs e)
         {
 
@@ -64,14 +61,12 @@ namespace Calculator
 
             tbOutput.Text += "4";
         }
-
         private void btn5_Click(object sender, EventArgs e)
         {
             setOutputToZero();
 
             tbOutput.Text += "5";
         }
-
         private void btn6_Click(object sender, EventArgs e)
         {
             setOutputToZero();
@@ -151,6 +146,8 @@ namespace Calculator
             numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
+
+            calculate = true;
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
@@ -160,6 +157,8 @@ namespace Calculator
             numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
+
+            calculate = true;
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
@@ -169,39 +168,48 @@ namespace Calculator
             numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
+
+            calculate = true;
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
+
             option = "/";
 
             numb1 = double.Parse(tbOutput.Text);
 
             tbOutput.Text = "0";
+
+            calculate = true;
         }
 
         private void btnSolution_Click(object sender, EventArgs e)
         {
             numb2 = double.Parse(tbOutput.Text);
 
-            if (option == "-")
+            if(calculate == true)
             {
-                result = numb1 - numb2;
-            }
-            else if (option == "+")
-            {
-                result = numb1 + numb2;
-            }
-            else if(option == "*")
-            {
-                result =  numb1 * numb2;
-            }
-            else if(option == "/")
-            {
-                result = numb1 / numb2;
-            }
+                if (option == "-")
+                {
+                    result = numb1 - numb2;
+                }
+                else if (option == "+")
+                {
+                    result = numb1 + numb2;
+                }
+                else if (option == "*")
+                {
+                    result = numb1 * numb2;
+                }
+                else if (option == "/")
+                {
+                    result = numb1 / numb2;
+                }
 
-            tbOutput.Text = result.ToString();
+                tbOutput.Text = result.ToString();
+            }
+            calculate = false;
         }
     }
 }
