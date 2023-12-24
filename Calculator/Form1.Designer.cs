@@ -46,6 +46,9 @@
             this.btnSolution = new System.Windows.Forms.Button();
             this.tbOutput = new System.Windows.Forms.TextBox();
             this.btnComma = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCE = new System.Windows.Forms.Button();
+            this.btnPercent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn0
@@ -228,11 +231,44 @@
             this.btnComma.UseVisualStyleBackColor = true;
             this.btnComma.Click += new System.EventHandler(this.btnComma_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(160, 96);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(68, 45);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "C";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnCE
+            // 
+            this.btnCE.Location = new System.Drawing.Point(86, 96);
+            this.btnCE.Name = "btnCE";
+            this.btnCE.Size = new System.Drawing.Size(68, 45);
+            this.btnCE.TabIndex = 19;
+            this.btnCE.Text = "CE";
+            this.btnCE.UseVisualStyleBackColor = true;
+            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
+            // 
+            // btnPercent
+            // 
+            this.btnPercent.Location = new System.Drawing.Point(12, 96);
+            this.btnPercent.Name = "btnPercent";
+            this.btnPercent.Size = new System.Drawing.Size(68, 45);
+            this.btnPercent.TabIndex = 20;
+            this.btnPercent.Text = "%";
+            this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 357);
+            this.Controls.Add(this.btnPercent);
+            this.Controls.Add(this.btnCE);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnComma);
             this.Controls.Add(this.tbOutput);
             this.Controls.Add(this.btnSolution);
@@ -278,6 +314,9 @@
         private System.Windows.Forms.Button btnSolution;
         private System.Windows.Forms.TextBox tbOutput;
         private System.Windows.Forms.Button btnComma;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCE;
+        private System.Windows.Forms.Button btnPercent;
     }
 }
 

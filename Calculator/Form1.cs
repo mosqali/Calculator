@@ -208,8 +208,29 @@ namespace Calculator
                 }
 
                 tbOutput.Text = result.ToString();
+
+                calculate = false;
             }
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            tbOutput.Text = "0";
+
             calculate = false;
+        }
+        private void btnCE_Click(object sender, EventArgs e)
+        {
+            tbOutput.Text = "0";
+        }
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+            double percentNumb;
+
+            percentNumb = Convert.ToDouble(tbOutput.Text);
+
+            percentNumb /= 100;
+
+            tbOutput.Text = percentNumb.ToString();
         }
     }
 }
