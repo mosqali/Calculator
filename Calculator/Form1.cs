@@ -22,6 +22,7 @@ namespace Calculator
         double numb2;
         string option;
         bool calculate = false;
+        bool reset = false;
 
         private void setOutputToZero()
         {
@@ -30,15 +31,39 @@ namespace Calculator
                 tbOutput.Text = "";
             }
         }
+        
+        private void ShowCalcOnLabel1(double number, string option)
+        {
+            lblCalculation.Text = number.ToString() + " " + option;
+        }
+
+        private void ShowCalcOnLabel2(double number)
+        {
+            lblCalculation.Text += " " + number.ToString() + " = ";
+        }
+
+        private void ResetCalcualtionLabel()
+        {
+            if (reset == true)
+            {
+                lblCalculation.Text = "";
+                reset = false;
+            }
+        }
+
         private void btn0_Click(object sender, EventArgs e)
         {
             setOutputToZero();
 
             tbOutput.Text += "0";
+
+            ResetCalcualtionLabel();
         }
         private void btn1_Click(object sender, EventArgs e)
         {
             setOutputToZero();
+
+            ResetCalcualtionLabel();
 
             tbOutput.Text += "1";
         }
@@ -46,18 +71,23 @@ namespace Calculator
         {
             setOutputToZero();
 
+            ResetCalcualtionLabel();
+
             tbOutput.Text += "2";
         }
         private void btn3_Click(object sender, EventArgs e)
         {
             setOutputToZero();
 
+            ResetCalcualtionLabel();
+
             tbOutput.Text += "3";
         }
         private void btn4_Click(object sender, EventArgs e)
         {
-
             setOutputToZero();
+
+            ResetCalcualtionLabel();
 
             tbOutput.Text += "4";
         }
@@ -65,11 +95,16 @@ namespace Calculator
         {
             setOutputToZero();
 
+            ResetCalcualtionLabel();
+
             tbOutput.Text += "5";
         }
         private void btn6_Click(object sender, EventArgs e)
         {
             setOutputToZero();
+
+            ResetCalcualtionLabel();
+
 
             tbOutput.Text += "6";
         }
@@ -77,17 +112,25 @@ namespace Calculator
         {
             setOutputToZero();
 
+            ResetCalcualtionLabel();
+
+
             tbOutput.Text += "7";
         }
         private void btn8_Click(object sender, EventArgs e)
         {
             setOutputToZero();
 
+            ResetCalcualtionLabel();
+
+
             tbOutput.Text += "8";
         }
         private void btn9_Click(object sender, EventArgs e)
         {
             setOutputToZero();
+
+            ResetCalcualtionLabel();
 
             tbOutput.Text += "9";
         }
@@ -145,6 +188,8 @@ namespace Calculator
 
             numb1 = double.Parse(tbOutput.Text);
 
+            ShowCalcOnLabel1(numb1, option);
+
             tbOutput.Text = "0";
 
             calculate = true;
@@ -155,6 +200,8 @@ namespace Calculator
             option = "+";
 
             numb1 = double.Parse(tbOutput.Text);
+
+            ShowCalcOnLabel1(numb1, option);
 
             tbOutput.Text = "0";
 
@@ -167,6 +214,8 @@ namespace Calculator
 
             numb1 = double.Parse(tbOutput.Text);
 
+            ShowCalcOnLabel1(numb1, option);
+
             tbOutput.Text = "0";
 
             calculate = true;
@@ -174,10 +223,11 @@ namespace Calculator
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-
             option = "/";
 
             numb1 = double.Parse(tbOutput.Text);
+
+            ShowCalcOnLabel1(numb1, option);
 
             tbOutput.Text = "0";
 
@@ -209,14 +259,17 @@ namespace Calculator
 
                 tbOutput.Text = result.ToString();
 
+                ShowCalcOnLabel2(numb2);
+
                 calculate = false;
+                reset = true;
             }
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
             tbOutput.Text = "0";
 
-            calculate = false;
+            //calculate = false;
         }
         private void btnCE_Click(object sender, EventArgs e)
         {
