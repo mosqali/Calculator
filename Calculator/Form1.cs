@@ -15,6 +15,8 @@ namespace Calculator
         public Calculator()
         {
             InitializeComponent();
+
+
         }
 
         double result;
@@ -283,7 +285,9 @@ namespace Calculator
         {
             tbOutput.Text = "0";
 
-            //calculate = false;
+            tbCalculation.Text = "";
+
+            calculate = false;
         }
         private void btnCE_Click(object sender, EventArgs e)
         {
