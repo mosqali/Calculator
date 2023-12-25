@@ -49,9 +49,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCE = new System.Windows.Forms.Button();
             this.btnPercent = new System.Windows.Forms.Button();
-            this.lblCalculation = new System.Windows.Forms.Label();
-            this.pnlCalculation = new System.Windows.Forms.Panel();
-            this.pnlCalculation.SuspendLayout();
+            this.tbCalculation = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn0
@@ -264,30 +262,21 @@
             this.btnPercent.UseVisualStyleBackColor = true;
             this.btnPercent.Click += new System.EventHandler(this.btnPercent_Click);
             // 
-            // lblCalculation
+            // tbCalculation
             // 
-            this.lblCalculation.AutoSize = true;
-            this.lblCalculation.Location = new System.Drawing.Point(56, 0);
-            this.lblCalculation.Name = "lblCalculation";
-            this.lblCalculation.Size = new System.Drawing.Size(12, 13);
-            this.lblCalculation.TabIndex = 21;
-            this.lblCalculation.Text = "/";
-            // 
-            // pnlCalculation
-            // 
-            this.pnlCalculation.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlCalculation.Controls.Add(this.lblCalculation);
-            this.pnlCalculation.Location = new System.Drawing.Point(12, 14);
-            this.pnlCalculation.Name = "pnlCalculation";
-            this.pnlCalculation.Size = new System.Drawing.Size(288, 26);
-            this.pnlCalculation.TabIndex = 22;
+            this.tbCalculation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCalculation.Location = new System.Drawing.Point(12, 17);
+            this.tbCalculation.Name = "tbCalculation";
+            this.tbCalculation.Size = new System.Drawing.Size(288, 23);
+            this.tbCalculation.TabIndex = 22;
+            this.tbCalculation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 372);
-            this.Controls.Add(this.pnlCalculation);
+            this.Controls.Add(this.tbCalculation);
             this.Controls.Add(this.btnPercent);
             this.Controls.Add(this.btnCE);
             this.Controls.Add(this.btnClear);
@@ -311,8 +300,6 @@
             this.Controls.Add(this.btn0);
             this.Name = "Calculator";
             this.Text = "Calculator";
-            this.pnlCalculation.ResumeLayout(false);
-            this.pnlCalculation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,8 +328,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCE;
         private System.Windows.Forms.Button btnPercent;
-        private System.Windows.Forms.Label lblCalculation;
-        private System.Windows.Forms.Panel pnlCalculation;
+        private System.Windows.Forms.TextBox tbCalculation;
     }
 }
 

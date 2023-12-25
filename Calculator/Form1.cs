@@ -34,19 +34,20 @@ namespace Calculator
         
         private void ShowCalcOnLabel1(double number, string option)
         {
-            lblCalculation.Text = number.ToString() + " " + option;
+            tbCalculation.Text = number.ToString() + " " + option;
         }
 
         private void ShowCalcOnLabel2(double number)
         {
-            lblCalculation.Text += " " + number.ToString() + " = ";
+            tbCalculation.Text += " " + number.ToString() + " = ";
         }
 
         private void ResetCalcualtionLabel()
         {
             if (reset == true)
             {
-                lblCalculation.Text = "";
+                tbCalculation.Text = "";
+                tbOutput.Text = "";
                 reset = false;
             }
         }
@@ -55,9 +56,9 @@ namespace Calculator
         {
             setOutputToZero();
 
-            tbOutput.Text += "0";
-
             ResetCalcualtionLabel();
+
+            tbOutput.Text += "0";
         }
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -144,7 +145,18 @@ namespace Calculator
 
             if (!ContainsComma)
             {
-                tbOutput.Text += ",";
+                setOutputToZero();
+
+                ResetCalcualtionLabel();
+
+                if(tbOutput.Text == "")
+                {
+                    tbOutput.Text += "0,";
+                }
+                else
+                {
+                    tbOutput.Text += ",";
+                }
             }
 
             //a function which returns a boolean
@@ -167,6 +179,8 @@ namespace Calculator
             {
                 tbOutput.Text = deletedCharOfNumb;
             }
+
+            ResetCalcualtionLabel();
 
             string RemoveLastCharacter(string number)
             {
