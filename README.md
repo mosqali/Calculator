@@ -1,4 +1,4 @@
-Description
+Description:
 This is a simple calculator designed with a user interface reminiscent of Windows. The calculator supports basic mathematical operations, including addition, subtraction, multiplication, and division. Additionally, it can convert a number to a percentage.
 
 Features
